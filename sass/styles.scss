@@ -140,6 +140,12 @@ ul {
     border-radius: 4px;
     box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.0973);
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: darken($secondary-color, 5%);
+    }
   }
 
   &__why {
@@ -222,6 +228,13 @@ ul {
 
     &__why {
       padding: 2.4rem;
+    }
+
+    &__signup-btn {
+      &:hover,
+      &:focus {
+        background-color: $secondary-color;
+      }
     }
   }
 }
