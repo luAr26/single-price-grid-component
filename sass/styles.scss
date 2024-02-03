@@ -1,7 +1,7 @@
 $primary-color: hsl(179, 62%, 43%);
 $secondary-color: hsl(71, 73%, 54%);
 $light-grey: hsl(204, 43%, 93%);
-$grayish-blue: hsl(218, 22%, 67%);
+$grayish-blue: hsl(217, 22%, 67%);
 $body-font-size: 1.6rem;
 // $h1-font-size: 2.2rem;
 // $caption-font-size: 1.6rem;
@@ -49,8 +49,179 @@ ul {
 
 // SINGLE PRICE GRID COMPONENT
 .price-grid {
-  max-width: 63.5%;
+  max-width: 63.5rem;
   margin: 16.3rem auto 0 auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 15px 30px 0 rgba(0, 81, 171, 0.1488);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;
+  overflow: hidden;
+
+  &__top {
+    grid-column: 1 / span 2;
+    padding: 4rem 4rem 0 4rem;
+    > h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      margin-bottom: 2.4rem;
+      color: $primary-color;
+    }
+
+    > h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.22px;
+      margin-bottom: 1.1rem;
+      line-height: 1.167;
+      color: $secondary-color;
+    }
+
+    > p {
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      margin-bottom: 4rem;
+      line-height: 1.625;
+      color: $grayish-blue;
+    }
+  }
+
+  &__pricing {
+    padding: 4rem;
+    background-color: $primary-color;
+    color: #fff;
+
+    > h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.22px;
+      line-height: 1.167;
+      margin-bottom: 1.8rem;
+    }
+  }
+
+  &__price {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.15625;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.4rem;
+
+    > span {
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: -0.2px;
+      margin-left: 1.1rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+  }
+
+  &__benefit {
+    font-size: 1.6rem;
+    line-height: 1.625;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    margin-bottom: 2.6rem;
+  }
+
+  &__signup-btn {
+    border: none;
+    display: block;
+    width: 100%;
+    background-color: $secondary-color;
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.1875;
+    padding: 1.5rem 0 1.4rem 0;
+    border-radius: 4px;
+    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.0973);
+    cursor: pointer;
+  }
+
+  &__why {
+    padding: 4rem;
+    background-color: $primary-color;
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background-color: #fff;
+      opacity: 0.1519;
+      z-index: 1;
+    }
+
+    > h3 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.22px;
+      line-height: 1.167;
+      margin-bottom: 1.8rem;
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+
+    > ul {
+      font-size: 1.4rem;
+      font-weight: 400;
+      letter-spacing: -0.17px;
+      line-height: 1.4285714285;
+      color: #fff;
+      opacity: 0.75;
+      position: relative;
+      z-index: 2;
+    }
+  }
 }
 
 // Media query breakpoints: 375px and 1440px
+
+@media only screen and (max-width: 690px) {
+  .price-grid {
+    max-width: 31.1rem;
+    margin: 7.2rem auto 0 auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+
+    &__top {
+      padding: 2.8rem 2.4rem 0 2.4rem;
+      > h1 {
+        font-size: 2rem;
+        letter-spacing: -0.25px;
+      }
+
+      > h2 {
+        font-size: 1.5rem;
+        letter-spacing: -0.19px;
+        line-height: 1.33334;
+        margin-bottom: 1.6rem;
+      }
+
+      > p {
+        font-size: 1.4rem;
+        letter-spacing: -0.17px;
+        line-height: 1.857152885142857;
+        margin-bottom: 3.2rem;
+      }
+    }
+
+    &__pricing {
+      padding: 2.4rem;
+    }
+
+    &__why {
+      padding: 2.4rem;
+    }
+  }
+}
